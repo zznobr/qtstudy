@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icon/before.png</file>
+        <file>icon/copy.png</file>
+        <file>icon/cut.png</file>
+        <file>icon/file.png</file>
+        <file>icon/new.png</file>
+        <file>icon/next.png</file>
+        <file>icon/paste.png</file>
+        <file>icon/save.png</file>
+        <file>icon/saveother.png</file>
+        <file>icon/font.png</file>
+        <file>icon/replace.png</file>
+        <file>icon/search.png</file>
+        <file>icon/showLine.png</file>
+        <file>icon/statusBar.png</file>
+        <file>icon/toolBar.png</file>
+        <file>icon/turnLine.png</file>
+    </qresource>
+</RCC>
