@@ -2,7 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QString>
+#include "loginview.h"
+#include "mainpage.h"
+#include "patientview.h"
+#include "patienteditview.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -15,37 +18,33 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-
-    QString beforeQStr;
-    QString nowQStr;
-    QString firstStr;
-    QString beforeOp;
-    double beforeNum;
-    double nowNum;
-    bool isOp;
-
-    bool checkOpExist();
-    void showBefore();
-    void calculate();
-    QString clearZero(QString str);
-
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    int pageCount;
+
+    loginView *loginpage;
+    mainPage *mainpage;
+    patientView *patientpage;
+    patientEditView *patientEditPage;
+
+    void pushStackedView(QWidget *widget);
 
 private:
     Ui::MainWindow *ui;
 
+public slots:
+    void goLoginView();
+    void goMainPage(QString id);
+    void goPatientView();
+    void goPatientEditView(int index);
+    void goPreviousView();
+
 private slots:
-    void btnNumClick();//Number
-    void btnPointClick();//" . "
-    void btnBackClick();//" X "
-    void btnOppositeClick();//" +/- "
-    void btnReciprocalClick();//" 1/x "
-    void btnCeClick();// " CE "
-    void btnCClick();// " C "
-    void btnPrecentClick();// " % "
-    void btnSqrClick();// " SQR "
-    void btnSqrtClick();// " EXT "
-    void btnFourCalculateClick(); // "+ - * /"
+    void on_pushButton_2_clicked(bool checked);
+
+signals:
+    ;
+
 };
 #endif // MAINWINDOW_H
